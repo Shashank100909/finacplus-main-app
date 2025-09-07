@@ -1,0 +1,12 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 50px;
+  color: #333;
+}

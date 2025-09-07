@@ -1,0 +1,83 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.modal-input:focus {
+  border-color: #1db954;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+ .btn-add { 
+  height: 40px;
+  background: #1db954;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+} 
+
+.btn-add:hover {
+  background: #1ed760;
+  transform: scale(1.05);
+}
+
+
+.btn-cancel {
+  height: 40px;
+  background: #333;
+  color: #ddd;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-cancel:hover {
+  background: #444;
+  transform: scale(1.05);
+}
+
