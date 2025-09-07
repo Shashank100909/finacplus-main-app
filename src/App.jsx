@@ -18,6 +18,7 @@ const MusicLibrary = React.lazy(() => import("music_library/LibraryApp"));
 export default function App() {
   const [showModal, setShowModal] = useState(false);
   const [songs, setSongs] = useState([]);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // NEW state
 
   const token = getToken();
   const isLoggedIn = isTokenValid(token);
@@ -36,10 +37,9 @@ export default function App() {
 
   const handleAddSong = () => setShowModal(true);
 
-const handleSubmitSong = (song) => {
-  setSongs([...songs, song]); 
-};
-
+  const handleSubmitSong = (song) => {
+    setSongs([...songs, song]);
+  };
 
   if (!isLoggedIn) {
     return <LoginPage onLogin={handleLogin} />;
@@ -47,20 +47,26 @@ const handleSubmitSong = (song) => {
 
   return (
     <div className="app-container">
-      <Sidebar onLogout={handleLogout} />
+      
+      <Sidebar isOpen={isSidebarOpen} onLogout={handleLogout} />
+
       <div className="main-content">
-        <Topbar />
-      {showModal && (
-  <AddSongModal
-    existingSongs={songs}                 
-    onClose={() => setShowModal(false)}
-    onSubmit={handleSubmitSong}
-  />
-)}
+        <Topbar onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)} /> 
+
+        {showModal && (
+          <AddSongModal
+            existingSongs={songs}
+            onClose={() => setShowModal(false)}
+            onSubmit={handleSubmitSong}
+          />
+        )}
         <Suspense fallback={<div className="loading">Loading Library...</div>}>
           <MusicLibrary newSongs={songs} role={role} onAddSong={handleAddSong} />
         </Suspense>
       </div>
+
+   
+      {isSidebarOpen && <div className="sidebar-overlay" onClick={() => setIsSidebarOpen(false)} />}
     </div>
   );
 }

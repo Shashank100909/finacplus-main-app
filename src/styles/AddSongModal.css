@@ -81,3 +81,21 @@
   transform: scale(1.05);
 }
 
+
+@media screen and (max-width: 360px) {
+  .modal {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .modal-input {
+    font-size: 13px;
+  }
+
+  .btn-add,
+  .btn-cancel {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+

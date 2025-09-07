@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const path = require('path');
 
-const remoteEntryURL = process.env.MUSIC_LIBRARY_URL
+const remoteEntryURL = process.env.MUSIC_LIBRARY_URL || "http://localhost:8081/remoteEntry.js"
 module.exports = {
   entry: './src/index.js',
 mode: 'production',
