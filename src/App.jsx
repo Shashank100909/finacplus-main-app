@@ -47,7 +47,7 @@ const handleSubmitSong = (song) => {
 
   return (
     <div className="app-container">
-      <Sidebar onLogout={handleLogout} />
+      <Sidebar className="Side-bar" onLogout={handleLogout} />
       <div className="main-content">
         <Topbar />
       {showModal && (
@@ -64,3 +64,4 @@ const handleSubmitSong = (song) => {
     </div>
   );
 }
+

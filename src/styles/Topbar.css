@@ -10,3 +10,15 @@
   font-size: 50px;
   color: #333;
 }
+
+@media screen and (max-width: 480px) {
+  .topbar {
+    padding: 10px;
+  }
+
+  .topbar h1 {
+    font-size: 24px;
+  }
+}
+
+

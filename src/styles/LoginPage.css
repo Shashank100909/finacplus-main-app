@@ -101,3 +101,24 @@
     font-size: 15px;
   }
 }
+
+
+@media screen and (max-width: 420px) {
+  .login-box {
+    width: 90%;
+    padding: 25px 20px;
+  }
+
+  .login-title {
+    font-size: 26px;
+  }
+
+  .form-input {
+    font-size: 14px;
+  }
+
+  .btn-primary {
+    font-size: 15px;
+  }
+}
+
