@@ -49,7 +49,7 @@ Host app dynamically loads the micro-frontend at runtime.
 ## Demo Credentials
 Role	Username	Password
 Admin	admin	admin@123
-User	user	user@123
+User	user1	user@123
 
 ## Behavior:
 Admin: Can add and delete songs.
