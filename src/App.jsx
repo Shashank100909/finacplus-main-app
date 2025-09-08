@@ -12,6 +12,7 @@ import {
   isTokenValid,
 } from "./auth";
 import "./styles/App.css";
+import Swal from "sweetalert2";
 
 const MusicLibrary = React.lazy(() => import("music_library/LibraryApp"));
 
@@ -29,11 +30,23 @@ export default function App() {
     window.location.reload();
   };
 
-  const handleLogout = () => {
-    clearToken();
-    window.location.reload();
-  };
-
+const handleLogout = () => {
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You will be logged out!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, logout!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      clearToken();         // clear the auth token
+      window.location.reload(); // reload the page
+      Swal.fire('Logged Out!', 'You have been logged out.', 'success');
+    }
+  });
+};
   const handleAddSong = () => setShowModal(true);
 
 const handleSubmitSong = (song) => {
