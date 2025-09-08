@@ -24,8 +24,6 @@ cd finacplus-music-library
 npm install
 Start the apps:
 
-bash
-Copy code
 # Start Main App
 cd finacplus-main-app
 npm start  # Runs on port 8080
@@ -39,7 +37,7 @@ Open in browser:
 Host app: http://localhost:8080
 MusicLibrary: http://localhost:8081
 
-How the Project Was Deployed
+## How the project was deployed
 Deployed on Vercel using GitHub import.
 Each micro-frontend is independent, integrated using Webpack Module Federation.
 Deployment steps:
@@ -48,42 +46,40 @@ Deployment steps:
 3.Vercel automatically builds and deploys the apps.
 Host app dynamically loads the micro-frontend at runtime.
 
-Demo Credentials
+## Demo Credentials
 Role	Username	Password
 Admin	admin	admin@123
 User	user	user@123
 
-Behavior:
+## Behavior:
 Admin: Can add and delete songs.
 User: View-only access.
 
-How Micro-Frontend Works
+## How Micro-Frontend Works
 Architecture: Host app + independent micro-frontends (e.g., MusicLibrary) via Module Federation.
 Integration: Host app passes role or user info as props to micro-frontends.
 Benefits: Each micro-frontend can be developed, deployed, and updated independently.
 
-How Role-Based Auth Works
+## How Role-Based Auth Works
 Upon login, a mock JWT is generated:
-
 json
 Copy code
 {
   "username": "admin",
   "role": "admin"
 }
-
 Stored in localStorage.
 Admin: Can see Add/Delete buttons, manage songs.
 User: Only view content.
 Micro-frontends read the role from the host to render UI accordingly.
 
-Tech Stack
+## Tech Stack
 React, Webpack 5, Module Federation
 CSS for styling and responsive design
 Deployed on Vercel
 Responsive layout: sidebar, album carousels, modals
 
-Features
+## Features
 Login system with role-based access
 Sidebar with off-canvas behavior on mobile
 Album cards with truncation and touch-friendly buttons
